@@ -215,35 +215,6 @@ export default class VirtualNode {
   }
 
   /**
-   * Copy all data from source virtual node.
-   *
-   * @param {VirtualNode} sourceNode
-   */
-  copyFrom(sourceNode) {
-    this.key = sourceNode.key;
-    this.type = sourceNode.type;
-    this.tag = sourceNode.tag;
-
-    // Reference properties
-    this.oldProps = sourceNode.oldProps;
-    this.pendingProps = sourceNode.pendingProps;
-    // this.state = sourceNode.state; TODO: add support for states
-    this.instance = sourceNode.instance;
-    this.elementRef = sourceNode.elementRef;
-    this.listeners = sourceNode.listeners;
-
-    // Indicator properties
-    this.effect = sourceNode.effect;
-    this.mounted = sourceNode.mounted;
-    this.pendingUpdate = sourceNode.pendingUpdate;
-    // this.stateChanged = sourceNode.stateChanged; TODO: add support for states
-
-    // Node properties
-    this.parent = sourceNode.parent;
-    this.children = sourceNode.children;
-  }
-
-  /**
    * Create another instance with same properties.
    *
    * @returns {VirtualNode}
@@ -273,6 +244,35 @@ export default class VirtualNode {
     cloned.children = this.children;
 
     return cloned;
+  }
+
+  /**
+   * Copy all data from source virtual node.
+   *
+   * @param {VirtualNode} sourceNode
+   */
+  copyFrom(sourceNode) {
+    this.key = sourceNode.key;
+    this.type = sourceNode.type;
+    this.tag = sourceNode.tag;
+
+    // Reference properties
+    this.oldProps = sourceNode.oldProps;
+    this.pendingProps = sourceNode.pendingProps;
+    // this.state = sourceNode.state; TODO: add support for states
+    this.instance = sourceNode.instance;
+    this.elementRef = sourceNode.elementRef;
+    this.listeners = sourceNode.listeners;
+
+    // Indicator properties
+    this.effect = sourceNode.effect;
+    this.mounted = sourceNode.mounted;
+    this.pendingUpdate = sourceNode.pendingUpdate;
+    // this.stateChanged = sourceNode.stateChanged; TODO: add support for states
+
+    // Node properties
+    this.parent = sourceNode.parent;
+    this.children = sourceNode.children;
   }
 }
 

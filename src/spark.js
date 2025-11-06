@@ -1,5 +1,6 @@
 import Component from './component';
 import {buildVirtualTreeRoot} from "@/virtual-node";
+import {reconcile} from "@/reconciler";
 
 export class Spark {
   constructor() {
@@ -47,8 +48,9 @@ export class Spark {
 
     const renderResult = this._rootFunc();
     const newVirtualTree = buildVirtualTreeRoot(renderResult);
+
+    reconcile(this._virtualTree, newVirtualTree);
     console.log(newVirtualTree);
-    // TODO: reconcile between current and new virtual tree
     // TODO: resolve effects in both trees
     // TODO: handle deletion effects
     // TODO: store new virtual tree as current virtual tree
