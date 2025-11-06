@@ -1,4 +1,5 @@
 import Component from './component';
+import {buildVirtualTreeRoot} from "@/virtual-node";
 
 export class Spark {
   constructor() {
@@ -40,7 +41,19 @@ export class Spark {
   }
 
   render() {
+    if (!this._rootEl) {
+      throw new Error('Could not find a root element');
+    }
 
+    const renderResult = this._rootFunc();
+    const newVirtualTree = buildVirtualTreeRoot(renderResult);
+    console.log(newVirtualTree);
+    // TODO: reconcile between current and new virtual tree
+    // TODO: resolve effects in both trees
+    // TODO: handle deletion effects
+    // TODO: store new virtual tree as current virtual tree
+    // TODO: handle placement and update effects
+    // TODO: clean all effects
   }
 
   /**

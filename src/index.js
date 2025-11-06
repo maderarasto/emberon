@@ -1,7 +1,5 @@
 import {Spark} from "@/spark";
 
-const CORDOVA_DEVICE_READY = 'deviceready';
-
 /**
  *
  * @param {SparkJS.AppConfig} config
@@ -14,7 +12,7 @@ export function createApp(config) {
   window.$app = new Spark();
   window.$app.setRootFunction(config.render);
 
-  document.addEventListener(CORDOVA_DEVICE_READY, () => {
+  document.addEventListener('DOMContentLoaded', () => {
     $app.mount(config.mountEl);
   });
 }

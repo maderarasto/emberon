@@ -1,8 +1,7 @@
-
-
 declare namespace SparkJS {
   type Props = Record<string, unknown>
-  type ObjectConstructor = new (props: Props) => Object
+  type ComponentConstructor = new (props: Props) => import('./component').default
+  type EventListener = EventListenerOrEventListenerObject
   type RenderResult = JSX | JSX[] | string
   type RenderCallback = () => RenderResult
 
@@ -20,6 +19,10 @@ declare namespace SparkJS {
     | 'Text'
   )
 
+  type NodeTag = (
+    string | ComponentConstructor
+  )
+
   type NodeProps = Props & Partial<{
     key: string
     ref: RefObject
@@ -30,7 +33,7 @@ declare namespace SparkJS {
   }
 
   type JSX = {
-    elementName: ObjectConstructor | string
+    elementName: ComponentConstructor | string
     attributes: NodeProps
     children: (JSX|string)[]
   }
