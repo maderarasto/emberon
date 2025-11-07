@@ -10,7 +10,7 @@ export default class VirtualNode {
    * @param {SparkJS.NodeProps} props
    */
   constructor(type, tag, props = {}) {
-    const { key, ...otherProps } = props ?? {};
+    const { key, ref, ...otherProps } = props;
 
     /** @type {string|undefined} */
     this.key = key;
@@ -21,9 +21,13 @@ export default class VirtualNode {
     /** @type {SparkJS.Props} */
     this.oldProps = EmptyObject;
     /** @type {SparkJS.Props} */
-    this.pendingProps = props ?? EmptyObject;
+    this.pendingProps = otherProps ?? EmptyObject;
     /** @type {Record<string, any>} */
     this.state = EmptyObject;
+    /** @type {SparkJS.RefObject[]} */
+    this.refs = [];
+    /** @type {SparkJS.RefObject|null} */
+    this.ref = ref;
     /** @type {Component|null} */
     this.instance = null;
     /** @type {HTMLElement|null} */

@@ -1,6 +1,9 @@
 import {EmptyObject, flattenRenderResultChildren} from "@/utils";
 import {buildVirtualTree} from "@/virtual-node";
 
+/** @type {VirtualNode|null} */
+let lastMountedVirtualNode = null;
+
 /**
  * Build and mount whole subtree of virtual node.
  *
@@ -8,6 +11,7 @@ import {buildVirtualTree} from "@/virtual-node";
  */
 function mountVirtualSubtree(node) {
   node.effect = 'Placement';
+  lastMountedVirtualNode = node;
 
   if (node.isType('Component')) {
     node.createComponent();
@@ -180,6 +184,10 @@ function findMatchingChildNode(currentNode, newChildNode, position) {
   }
 
   return currentNode.children[position];
+}
+
+export function resolveLastMountedNode() {
+  return lastMountedVirtualNode;
 }
 
 /**
