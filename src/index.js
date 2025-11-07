@@ -21,6 +21,8 @@ export function createApp(config) {
 createApp({
   mountEl: '#app',
   render() {
-    return <App />
+    return (
+      <App />
+    )
   }
 })

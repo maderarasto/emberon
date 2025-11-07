@@ -139,7 +139,7 @@ export class Spark {
     const mountedComponentNodes = [];
     /** @type {VirtualNode[]} */
     const updatedComponentNodes = [];
-    console.log(newChanges);
+
     newChanges.forEach((effect) => {
       if (effect.type === 'Placement') {
         handlePlacement(effect, mountedComponentNodes);

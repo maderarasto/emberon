@@ -1,6 +1,7 @@
 {
   "presets": ["@babel/preset-env"],
   "plugins": [
+    "./scripts/babel-plugin-remove-jsx-comments.js",
     ["transform-jsx", {
       "useVariables": true
     }]
