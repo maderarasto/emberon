@@ -31,22 +31,22 @@ export default class Component {
   }
 
   /**
-   * A hook is triggered when component is mounted into DOM.
+   * Hook is triggered when component is mounted into DOM.
    */
   async mounted() {}
 
   /**
-   * a hook is triggered when application is resumed into component.
+   * Hook is triggered when application is resumed into component.
    */
   async resumed() {}
 
   /**
-   * A hook is triggered when component is re-rendered.
+   * Hook is triggered when component is re-rendered.
    */
   async updated() {}
 
   /**
-   * A hook is triggered before component is destroyed.
+   * Hook is triggered before component is destroyed.
    */
   async destroyed() {}
 }

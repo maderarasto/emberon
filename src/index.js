@@ -1,5 +1,4 @@
-import {Spark} from "@/lib/spark";
-
+import {Spark} from "./lib/spark";
 
 export {createRef} from './lib/spark';
 export { default } from './lib/component';
