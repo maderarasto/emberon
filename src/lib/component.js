@@ -1,4 +1,4 @@
-import {EmptyObject} from "./utils.js";
+import {EmptyObject} from "./utils";
 
 export default class Component {
   /**

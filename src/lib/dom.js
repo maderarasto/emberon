@@ -1,5 +1,5 @@
-import {findClosestNode} from "./virtual-node.js";
-import {diffProps, findClosestDOMNode, resolveClassName, resolveStyle} from "./utils.js";
+import {findClosestNode} from "./virtual-node";
+import {diffProps, findClosestDOMNode, resolveClassName, resolveStyle} from "./utils";
 
 /**
  *

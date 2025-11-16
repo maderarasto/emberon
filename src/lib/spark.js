@@ -1,6 +1,6 @@
-import {buildVirtualTreeRoot, findNodeByComponent} from "./virtual-node.js";
-import {cleanNodes, reconcile, resolveEffectsFromNodes, resolveLastMountedNode} from "./reconciler.js";
-import {createElement, unmountNode, updateElement} from "./dom.js";
+import {buildVirtualTreeRoot, findNodeByComponent} from "./virtual-node";
+import {cleanNodes, reconcile, resolveEffectsFromNodes, resolveLastMountedNode} from "./reconciler";
+import {createElement, unmountNode, updateElement} from "./dom";
 
 /**
  * Checks if component nodes are ready to trigger hooks for mounting or updating.

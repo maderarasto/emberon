@@ -1,5 +1,8 @@
-import {Spark, createRef} from "./spark.js";
-import Component from "./component.js";
+import {Spark} from "@/lib/spark";
+
+
+export {createRef} from './lib/spark';
+export Component from './lib/component';
 
 /**
  *
@@ -17,12 +20,3 @@ export function createApp(config) {
     $app.mount(config.mountEl);
   });
 }
-
-const SparkJS = {
-  Spark,
-  Component,
-  createRef,
-  createApp,
-};
-
-export default SparkJS;

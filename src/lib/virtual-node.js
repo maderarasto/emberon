@@ -1,4 +1,4 @@
-import {EmptyObject} from "./utils.js";
+import {EmptyObject} from "./utils";
 import htmlTags from "html-tags";
 import svgTags from "svg-tags";
 
