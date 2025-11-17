@@ -1,6 +1,14 @@
 {
   "name": "emberon",
+  "description": "Emberon is frontend javascript library for building user interfaces and is inspired by React JS library.",
   "version": "1.0.0",
+  "author": {
+    "name": "Rastislav Madera",
+    "email": "maderarasto@gmail.com"
+  },
+  "repository": {
+    "url": "https://github.com/maderarasto/emberon"
+  },
   "main": "./src/index.js",
   "files": [
     "src",
