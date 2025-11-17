@@ -17,6 +17,7 @@
     "package.json",
     "readme.md"
   ],
+  "readme": "readme.md",
   "dependencies": {
     "html-tags": "^5.1.0",
     "svg-tags": "^1.0.0"
